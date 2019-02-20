@@ -1,12 +1,12 @@
-@model List<Wedding>
+@model Dashboard
 
-<h1>Welcom to the Wedding Planner</h1>
+<h1>Welcome @Model.User.FirstName to the Wedding Planner</h1>
 <br>
 <div style="text-align: right">
     <a href="/logout" ><h4>Log Out<h4></a>
 </div>
 
-<p>Number of Weddings: @Model.Count</p>
+<p>Number of Weddings: @Model.Weddings.Count</p>
 <br>
 
 <div class="container" style="width: 100%">
@@ -19,7 +19,7 @@
             <th style="width: 30%">Action</th>
         </tr>
         @{
-            foreach(var wedd in @Model)
+            foreach(var wedd in @Model.Weddings)
             {
             <tr>
                 <td>@wedd.WeddingId</td>
@@ -29,6 +29,14 @@
                 <td>
                     <a href="/@wedd.WeddingId" class="button" style="margin-left: 20px;">Detail</a>
                 </td>
+                if(@wedd.Wedders.Any(w => w.GuestId == @Model.User.UserId)
+                {
+                    <td>UN-RSVP</td>
+                }
+                else
+                {
+                    <td>RSVP</td>
+                }
             </tr>
             }
         }

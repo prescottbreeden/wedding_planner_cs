@@ -13,8 +13,7 @@ namespace EventPlanner.Controllers
 {
     public class HomeController : Controller
     {
-        private EventPlannerContext dbContext;
-     
+        private EventPlannerContext dbContext;     
         public HomeController(EventPlannerContext context)
         {
             dbContext = context;

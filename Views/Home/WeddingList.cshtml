@@ -1,0 +1,40 @@
+@model List<Wedding>
+
+<h1>Welcom to the Wedding Planner</h1>
+<br>
+<div style="text-align: right">
+    <a href="/logout" ><h4>Log Out<h4></a>
+</div>
+
+<p>Number of Weddings: @Model.Count</p>
+<br>
+
+<div class="container" style="width: 100%">
+    <table style="width: 100%">
+        <tr>
+            <th style="width: 10%">ID</th>
+            <th style="width: 20%">Wedding</th>
+            <th style="width: 20%">Date</th>
+            <th style="width: 20%">Guest</th>
+            <th style="width: 30%">Action</th>
+        </tr>
+        @{
+            foreach(var wedd in @Model)
+            {
+            <tr>
+                <td>@wedd.WeddingId</td>
+                <td> @wedd.WedderOneFirstName & @wedd.WedderTwoFirstName </td>
+                <td>@wedd.Date</td>
+                <td>@wedd.Wedders.Count </td>
+                <td>
+                    <a href="/@wedd.WeddingId" class="button" style="margin-left: 20px;">Detail</a>
+                </td>
+            </tr>
+            }
+        }
+    </table>
+</div>
+<br>
+<div style="text-align: right">
+    <a href="/newwedding" ><h4>New Wedding<h4></a>
+</div>

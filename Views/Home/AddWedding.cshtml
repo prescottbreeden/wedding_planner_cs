@@ -1,0 +1,53 @@
+@model Wedding
+
+<body class="container">
+    <h1>Plan Your Wedding</h1>
+
+    <div style="text-align: right">
+        <H4>
+            <a href="/weddingview"> Dashboard  | 
+            <a href="/"> |  Log Out </a>
+        </H4>
+    </div>
+    
+    <div class="container">
+        <form action="createwedding" method="POST">
+            <div>
+                <br>
+                <span asp-validation-for="WedderOneFirstName"></span>
+                <label>Wedder One First Name:</label>
+                <input type="text" name="WedderOneFirstName" class="form-control">
+                <span asp-validation-for="WedderOneLastName"></span>
+                <label>Wedder One Last Name:</label>
+                <input type="text" name="WedderOneLastName" class="form-control">
+                <br>
+                <span asp-validation-for="WedderTwoFirstName"></span>
+                <label>Wedder Two First Name:</label>
+                <input type="text" name="WedderTwoFirstName" class="form-control">
+                <span asp-validation-for="WedderTwoLastName"></span>
+                <label>Wedder Two Last Name:</label>
+                <input type="text" name="WedderTwoLastName" class="form-control">
+                <br>
+                <!-- <span asp-validation-for="Restaurant"></span> -->
+                <label>Date:</label>
+                <input type="text" name="PlaceName" class="form-control">
+                <!-- <span asp-validation-for="Date"></span> -->
+                <label>Place:</label>
+                <input type="text" name="PlaceName" class="form-control">
+                <!-- <span asp-validation-for="Date"></span> -->
+                <label>Address:</label>
+                <input name="Address" class="form-control">
+                <label>City:</label>
+                <input name="City" class="form-control">
+                <label>State:</label>
+                <input name="State" class="form-control">
+                <label>Zipcode:</label>
+                <input name="Zipcode" class="form-control">
+                <br>
+            </div>
+            <div>
+                <button class="btn btn-info">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,48 @@
+﻿@model User
+
+<body class="container" style="width: 100%">
+    <div style="width: 45%; display: inline-block;">
+        <h1>Register</h1>
+        <div style="text-align: right">
+            <a href="/" type="button">Already Registered?</a>
+        </div>
+
+        <form action="/register" method="POST">
+            <label>First Name:</label>
+            <span asp-validation-for="FirstName"></span>
+            <input name="FirstName" type="text" class="form-control">
+            <label>LastName:</label>
+            <span asp-validation-for="LastName"></span>
+            <input name="LastName" type="text" class="form-control">
+            <label>Email:</label>
+            <span asp-validation-for="Email"></span>
+            <input name="Email" type="text" class="form-control">
+            <label>Password:</label>
+            <span asp-validation-for="Password"></span>
+            <input name="Password" type="text" class="form-control">
+            <label>Confirm Password:</label>
+            <span asp-validation-for="Confirm"></span>   
+            <input name="Confirm" type="text" class="form-control">
+            <br>
+            <button class="btn btn-info">Submit</button>
+        </form>
+    </div>
+
+    <div style="width: 45%; display: inline-block; margin-left: 30px; vertical-align: top;">
+        <h1>Login</h1>
+        <div style="text-align: right">
+            <a href="/" type="button">Need to Register?</a>
+        </div>
+
+        <form action="/userlogin" method="POST">
+            <label>Email:</label>
+            <span asp-validation-for="Email"></span>
+            <input name="Email" type="text" class="form-control">
+            <label>Password:</label>
+            <span asp-validation-for="Password"></span>
+            <input name="Password" type="text" class="form-control">
+            <br>
+            <button class="btn btn-info">Submit</button>
+        </form>
+    </div>
+</body>
